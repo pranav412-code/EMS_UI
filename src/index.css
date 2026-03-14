@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Source Sans 3", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --color-bg: #FAFAF8;
+  --color-fg: #1A1A1A;
+  --color-muted-bg: #F5F3F0;
+  --color-secondary-text: #6B6B6B;
+  --color-accent: #B8860B;
+  --color-border: #E8E4DF;
+
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tight;
+  }
+
+  .small-caps {
+    @apply font-mono text-[10px] uppercase tracking-[0.15em] text-secondary-text;
+  }
+}
+
+/* Custom scrollbar for editorial feel */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 10px;
+}
